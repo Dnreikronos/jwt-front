@@ -1,5 +1,6 @@
 import LoginPage from './pages/loginPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import RegisterPage from './pages/RegisterPage';
 
 
 function App() {
