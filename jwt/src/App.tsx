@@ -7,6 +7,10 @@ function App() {
   {
     path: "/",
     element: <LoginPage /> ,
+  },
+  {
+    path: "/RegisterPage",
+    element: <RegisterPage />,
   }
 ]);
 
