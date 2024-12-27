@@ -10,8 +10,7 @@ const RegisterPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+  const handleRegister = async () => {
     setIsLoading(true);
     setError("");
 
