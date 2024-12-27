@@ -52,6 +52,7 @@ const LoginPage = () => {
     <div className="relative flex items-center bg-gray-500 justify-center min-h-screen bg-gray-100">
       <div
         className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('https://img.freepik.com/free-photo/abstract-digital-grid-black-background_53876-97647.jpg?semt=ais_hybrid')" }}
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
