@@ -1,21 +1,33 @@
 import LoginPage from './pages/LoginPage';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import RegisterPage from './pages/RegisterPage';
 import SignOut from './pages/SignoutPage';
+
+
+
+const PrivateRoute = ({ element }: { element: JSX.Element }) => {
+  const isAuthenticated = localStorage.getItem("authToken");
+
+  if (!isAuthenticated) {
+    return <Navigate to="/" />;
+  }
+  return element;
+};
+
 
 function App() {
  const router = createBrowserRouter ([
   {
     path: "/",
-    element: <LoginPage /> ,
+    element: <PrivateRoute element={<LoginPage />} />,
   },
   {
     path: "/RegisterPage",
-    element: <RegisterPage />,
+    element: <PrivateRoute element={<RegisterPage />} />,
   },
   {
     path: "/Signout",
-    element: <SignOut />
+    element: <PrivateRoute element={<SignOut />} />,
   }
 ]);
 
