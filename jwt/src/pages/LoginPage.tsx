@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 
 const LoginPage = () => {
@@ -37,6 +37,7 @@ const LoginPage = () => {
 
       const { token } = data;
       localStorage.setItem("authToken", token);
+      navigate("/Signout");
     } catch (err) {
       setError("An error occurred. Please try again.");
     } finally {
