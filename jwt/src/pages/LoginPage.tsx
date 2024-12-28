@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 
 const LoginPage = () => {
@@ -8,8 +8,7 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
     setIsLoading(true);
     setError("");
 
@@ -38,6 +37,7 @@ const LoginPage = () => {
 
       const { token } = data;
       localStorage.setItem("authToken", token);
+      navigate("/Signout");
     } catch (err) {
       setError("An error occurred. Please try again.");
     } finally {
