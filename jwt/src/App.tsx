@@ -19,11 +19,11 @@ function App() {
  const router = createBrowserRouter ([
   {
     path: "/",
-    element: <PrivateRoute element={<LoginPage />} />,
+    element: <LoginPage />,
   },
   {
     path: "/RegisterPage",
-    element: <PrivateRoute element={<RegisterPage />} />,
+    element: <RegisterPage />,
   },
   {
     path: "/Signout",
